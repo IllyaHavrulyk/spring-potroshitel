@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.daun.industries.evgenyborisov"/>
+    <bean class="com.daun.industries.evgenyborisov.quoters.TerminatorQuoter" id="terminatorQuoter">
+        <property name="message" value="I'll be back!!"/>
+    </bean>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+    <bean class="com.daun.industries.evgenyborisov.postprocessors.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <bean class="com.daun.industries.evgenyborisov.postprocessors.ProfilingAnnotationBeanPostProcessor" />
+</beans>
